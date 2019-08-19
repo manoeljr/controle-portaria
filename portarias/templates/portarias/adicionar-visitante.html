@@ -1,0 +1,93 @@
+{% extends './index.html' %}
+
+{% block title %}ADICIONAR VISITANTE{% endblock %}
+
+{% block content %}
+
+    <form action="." style="margin: 10px 10px;" method="POST">
+        {% csrf_token %}
+        <div class="row" style="padding: 0;">
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Visitante</h4>
+                        <div class="form-group">
+                            <label for="id_nome" class="col-form-label">NOME</label>
+                            {{ form.nome }}
+                        </div>
+                        <div class="form-group">
+                            <label for="id_empresa" class="col-form-label">EMPRESA</label>
+                            {{ form.empresa }}
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="id_cpf" class="col-form-label">CPF</label>
+                                {{ form.cpf }}
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="id_rg" class="col-form-label">RG</label>
+                                {{ form.rg }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="id_telefone" class="col-form-label">TELEFONE</label>
+                            {{ form.telefone }}
+                        </div>
+                        <div class="form-group">
+                            <label for="id_tipo_visitantes">TIPO DE VISITANTE</label>
+                            {{ form.tipo_visitante }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Veiculo</h4>
+
+                            <div class="form-group">
+                                <label for="id_tipo_veiculo">TIPO DE VEICULO</label>
+                                {{ form.tipo_veiculo }}
+                            </div>
+                            <div class="form-group">
+                                <label for="id_modelo" class="col-form-label">MODELO</label>
+                                {{ form.modelo }}
+                            </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label for="id_placa" class="col-form-label">PLACA</label>
+                                {{ form.placa }}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="id_cor" class="col-form-label">COR</label>
+                                {{ form.cor }}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="id_placa_reboque" class="col-form-label">REBOQUE</label>
+                                {{ form.placa_reboque }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="id_objeto" class="col-form-label">OBJETO</label>
+                            {{ form.objetos }}
+                        </div>
+                        <div class="form-group">
+                            <label for="id_observacoes" class="col-form-label">OBSERVAÇÕES</label>
+                            {{ form.observacoes }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="margin-top: 1em;">
+            <button type="submit" class="btn btn-primary btn-md">CADASTRAR</button>
+            <button type="reset" class="btn btn-danger btn-md">CANCELAR</button>
+        </div>
+    </form>
+
+{% endblock %}
